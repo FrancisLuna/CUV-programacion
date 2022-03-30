@@ -1,0 +1,64 @@
+#include <iostream>
+use namespace std;
+
+//A class is a blueprint for the object.
+class className{ //When a class is defined, only the specification for the object is defined; no memory or storage is allocated.
+     public:
+        double length;
+        double breadth;
+        double height;   
+
+        double calculateArea(){   
+            return length * breadth;
+        }
+
+        double calculateVolume(){   
+            return length * breadth * height;
+        }
+
+};
+
+// Program to illustrate the working of
+// public and private in C++ Class
+
+#include <iostream>
+using namespace std;
+
+class Room {
+
+   private:
+    double length;
+    double breadth;
+    double height;
+
+   public:
+
+    // function to initialize private variables
+    void initData(double len, double brth, double hgt) {
+        length = len;
+        breadth = brth;
+        height = hgt;
+    }
+
+    double calculateArea() {
+        return length * breadth;
+    }
+
+    double calculateVolume() {
+        return length * breadth * height;
+    }
+};
+
+int main() {
+
+    // create object of Room class
+    Room room1;
+
+    // pass the values of private variables as arguments
+    room1.initData(42.5, 30.8, 19.2);
+
+    cout << "Area of Room =  " << room1.calculateArea() << endl;
+    cout << "Volume of Room =  " << room1.calculateVolume() << endl;
+
+    return 0;
+}
