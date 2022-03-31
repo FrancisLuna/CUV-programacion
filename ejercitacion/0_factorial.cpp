@@ -9,7 +9,7 @@ int main () {
     cout<<"Ingrese un numero para sacar el factorial: ";
     cin>>n;
     cout<<"Resultado: " << eje_fact2(n);
- return 0;
+return 0;
 }
 
 int eje_fact2 (int n){
@@ -20,7 +20,7 @@ int eje_fact2 (int n){
         fact*=n;
         --n;
     }
- return fact;
+return fact;
 }
 
 int eje_fact (int n){
@@ -30,5 +30,7 @@ int eje_fact (int n){
     {
         fact*=n;
     }
- return fact;
+return fact;
 }
+
+// Estoy probando y me andan los commits.
