@@ -41,17 +41,17 @@ void ej21(){
     posmax=posmin=maxnum=minnum=0;
     cout<<"Introduce la cantidad de numeros a ingresar: ";
     cin>>n;
+    n=5;
     cout<<"Introduce los numeros."<<endl;
     for (int i=0; i<n; i++){
-        // cin>>ninput;
-        int array[5]={0,-1,3,100,2};
+        cin>>ninput;
         if (ninput>maxnum)
         {
             maxnum=ninput;
             posmax=i;
-        }else if (ninput>maxnum)
+        }else if (ninput<minnum)
         {
-            maxnum=ninput;
+            minnum=ninput;
             posmin=i;
         }
     }
