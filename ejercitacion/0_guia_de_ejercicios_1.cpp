@@ -32,29 +32,32 @@ void ej21();
 
 int main () {
     //inserte la función a ver
-    ej20_como_prof_manda();
+    ej21();
  return 0;
 }
 
-// void ej21(){
-//     int n;
-//     int menor[2]=
-//     cout<<"Ingrese la cantidad de datos a ingresar: "<<endl;
-
-//     int array[n]={0};
-//     cout<<"Introduce los numeros."<<endl;
-//     for (int i=0; i<10; i++){
-//         cin>>array[i];
-//     }
-    
-//     int mayor=array[0];
-//     for (int i=0; i<9; i++){
-//         if(mayor<array[i+1]){
-//             mayor=array[i+1];
-//         }
-//     }for(const int &i:array) cout<<i<<" ";
-//     cout<<"El numero mas grande es: "<< mayor;
-// }
+void ej21(){
+    int n, ninput, posmax, posmin, maxnum, minnum;
+    posmax=posmin=maxnum=minnum=0;
+    cout<<"Introduce la cantidad de numeros a ingresar: ";
+    cin>>n;
+    cout<<"Introduce los numeros."<<endl;
+    for (int i=0; i<n; i++){
+        // cin>>ninput;
+        int array[5]={0,-1,3,100,2};
+        if (ninput>maxnum)
+        {
+            maxnum=ninput;
+            posmax=i;
+        }else if (ninput>maxnum)
+        {
+            maxnum=ninput;
+            posmin=i;
+        }
+    }
+    cout<<"el numero mas grande es: "<<maxnum<<"\n en la posicion:  "<<posmax<<endl;
+    cout<<"el numero mas chico es: "<<minnum<<"\n en la posicion:  "<<posmin<<endl;
+}
 
 void ej20_como_prof_manda(){
     int mayor, aux;
