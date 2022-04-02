@@ -38,20 +38,22 @@ int main () {
 
 void ej21(){
     int n, ninput, posmax, posmin, maxnum, minnum;
-    posmax=posmin=maxnum=minnum=0;
     cout<<"Introduce la cantidad de numeros a ingresar: ";
-    cin>>n;
-    n=5;
+    cin>>n; 
     cout<<"Introduce los numeros."<<endl;
-    for (int i=0; i<n; i++){
-        cin>>ninput;
-        if (ninput>maxnum)
+    for (int i=0; i<n; i++){  
+        cin>>ninput; 
+        if(i==0){ 
+            maxnum=minnum=ninput; 
+            posmax=posmin=i; 
+        }
+        if (ninput>maxnum)  
         {
-            maxnum=ninput;
-            posmax=i;
-        }else if (ninput<minnum)
+            maxnum=ninput; 
+            posmax=i; 
+        }else if (ninput<minnum)  
         {
-            minnum=ninput;
+            minnum=ninput; 
             posmin=i;
         }
     }
