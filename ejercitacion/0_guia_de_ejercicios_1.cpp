@@ -5,35 +5,70 @@
 #include <numeric> // std::acumulate
 using namespace std;
 
-void ej1(int, int);
-void ej2(int );
-void ej3(int );
-void ej5(int , int);
-void ej6 (); 
-void ej7();
-void ej8();
-void ej9();
-void ej11();
-void ej12();
-void ej13();
-void ej14();
-void ej14_como_lo_quiere_el_profe();
-void ej15(); // FALTA
-void ej16();
-void ej17();
-void ej18();
-void ej19(); // FALTA
-void ej20_hardcore();
-void ej20_como_prof_manda();
-void ej20(); //FALTA
-void ej21();
+void ej1(int, int); void ej2(int ); void ej3(int ); void ej5(int , int); void ej6 (); void ej7();void ej8();void ej9();void ej11();
+void ej12(); void ej13(); void ej14(); void ej14_como_lo_quiere_el_profe(); void ej15(); // FALTA 
+void ej16(); void ej17(); void ej18(); void ej19(); // FALTA 
+void ej20_hardcore(); void ej20_como_prof_manda(); void ej20(); //FALTA
+void ej21(); void ej22(); // FALTA VER DE HACERLO BIEN
+void ej23(); void ej24(); void ej25();void ej26();
 
 
 
 int main () {
     //inserte la función a ver
-    ej21();
+    ej23();
  return 0;
+}
+
+void ej23(){
+    float maxneg, minpos, minrang, sumval, num;
+    int c = 0;
+    maxneg=1;
+    minpos=-1;
+    minrang=1;
+    sumval=0;
+    while(true){
+        cin>>num;
+        if (num==0) break;
+        if (num<0 && num>maxneg) maxneg=num; 
+        if (num>0 && num<minpos) minpos =num;
+        if (num>-17.3 && num<26.9) minrang = num;
+        cout<<maxneg<<endl;
+        sumval+=num;
+        cout<<"/nIngrese otro valor"<<endl;
+        c++;
+    }
+    if (maxneg==1) cout<<"No ingreso valores negativos"<<endl; else cout <<"negativo max: "<< maxneg <<endl;
+    if (minpos==-1) cout << "No ingreso valores positivos"<<endl; else cout <<"minimo positivo: "<< minpos <<endl;
+    if (minrang==1) cout << "No ingreso valores dentro del rango"<<endl; else cout <<"minimo rango: "<< minrang<<endl;
+    if (sumval=0) cout << "No ingreso valores"<<endl; else cout <<"promedio: "<<sumval/c <<endl;
+}
+
+void ej22(){ //Oye... y si lo matamos... ESTOY CASAOOOOOOOOO (https://www.youtube.com/watch?v=M_LI6y9OMNg)
+    int fecha, maxnum, minnum;
+    string namemax, namemin, name;
+    for (int i=0; name!="FIN"; i++ ){  //esta mal usar un for asi pero soy muy pajero para cambiar a la estructura por un while :D
+        cout<<"Introduce el nombre: "<<endl;
+        cin>>name;
+        if (name=="FIN") break; // ME hinche la pistola de estos ejercicios asi que la voy a manquear :D (SEPAN PERDONAR MI CODIGO FIERO FIERO)
+        cout<<"Introduce las fecha AAAAMMDD: "<<endl;
+        cin>>fecha; 
+        if(i==0){  
+            maxnum=minnum=fecha; 
+            namemax=namemin=name; 
+        }
+        if (fecha>maxnum)  
+        {
+            maxnum=fecha; 
+            namemax=name; 
+        }else if (fecha<minnum)  
+        {
+            minnum=fecha; 
+            namemin=name;
+        }
+    }
+    cout<<"el mas VIEJARDO es: "<<namemax<<"\n y fue parido:  "<<maxnum<<endl;
+    cout<<"el mas PENDEX es: "<<namemin<<"\n en la posicion:  "<<minnum<<endl;
 }
 
 void ej21(){
@@ -43,7 +78,7 @@ void ej21(){
     cout<<"Introduce los numeros."<<endl;
     for (int i=0; i<n; i++){  
         cin>>ninput; 
-        if(i==0){ 
+        if(i==0){  
             maxnum=minnum=ninput; 
             posmax=posmin=i; 
         }
