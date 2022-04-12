@@ -1,3 +1,4 @@
+// TO DO; ej15, ej19, ej20, ej 22, flags ej 23
 #include <iostream> //std::cout std::cin etc.
 #include <cmath> // std::trunc
 #include <vector> // std::vector
@@ -6,43 +7,75 @@
 using namespace std;
 
 void ej1(int, int); void ej2(int ); void ej3(int ); void ej5(int , int); void ej6 (); void ej7();void ej8();void ej9();void ej11();
-void ej12(); void ej13(); void ej14(); void ej14_como_lo_quiere_el_profe(); void ej15(); // FALTA 
-void ej16(); void ej17(); void ej18(); void ej19(); // FALTA 
-void ej20_hardcore(); void ej20_como_prof_manda(); void ej20(); //FALTA
-void ej21(); void ej22(); // FALTA VER DE HACERLO BIEN
-void ej23(); void ej24(); void ej25();void ej26();
+void ej12(); void ej13(); void ej14(); void ej14_como_lo_quiere_el_profe(); void ej15(); void ej16(); void ej17(); void ej18(); void ej19(); 
+void ej20_hardcore(); void ej20_como_prof_manda(); void ej20(); void ej21(); void ej22(); void ej23_profe(); void ej23_flags(); void ej23();void ej23_pointers(); void ej24(); void ej25();void ej26();
 
 
 
 int main () {
     //inserte la función a ver
-    ej23();
+    ej23_flags();
  return 0;
 }
 
-void ej23(){
-    float maxneg, minpos, minrang, sumval, num;
-    int c = 0;
-    maxneg=1;
-    minpos=-1;
-    minrang=1;
+void ej23_flags(){
+    float maxneg, minpos, minrang, sumval, num, c;
+    bool first_maxneg, first_minpos, first_ramge;
+    first_maxneg=first_minpos=first_ramge=true;
+    c= 0;
     sumval=0;
-    while(true){
-        cin>>num;
-        if (num==0) break;
-        if (num<0 && num>maxneg) maxneg=num; 
-        if (num>0 && num<minpos) minpos =num;
-        if (num>-17.3 && num<26.9) minrang = num;
-        cout<<maxneg<<endl;
+    cout<<"Ingrese un valor"<< endl;
+    cin>>num;
+    while(num!=0){
+        if (num<0){
+            if (first_maxneg){
+                maxneg=num;
+                first_maxneg=false;
+            }else if (maxneg>num) maxneg=num; 
+        }
+        if (num>0){
+            if (first_minpos) {
+                minpos=num;
+                first_minpos=false;
+            }else if (minpos>num) minpos=num; 
+        } 
+        if (num>-17.3 && num<26. ){
+            if (first_ramge) {
+                minrang=num;
+                first_ramge=false;
+            }else if (minrang>num) minrang=num; 
+        } 
         sumval+=num;
         cout<<"/nIngrese otro valor"<<endl;
         c++;
+        cin>>num;
     }
-    if (maxneg==1) cout<<"No ingreso valores negativos"<<endl; else cout <<"negativo max: "<< maxneg <<endl;
-    if (minpos==-1) cout << "No ingreso valores positivos"<<endl; else cout <<"minimo positivo: "<< minpos <<endl;
-    if (minrang==1) cout << "No ingreso valores dentro del rango"<<endl; else cout <<"minimo rango: "<< minrang<<endl;
-    if (sumval=0) cout << "No ingreso valores"<<endl; else cout <<"promedio: "<<sumval/c <<endl;
+    if (first_maxneg) cout<<"No ingreso valores negativos"<<endl; else cout <<"negativo max: "<< maxneg <<endl;
+    if (first_minpos) cout << "No ingreso valores positivos"<<endl; else cout <<"minimo positivo: "<< minpos <<endl;
+    if (minrang==0) cout << "No ingreso valores dentro del rango"<<endl; else cout <<"minimo rango: "<< minrang<<endl;
+    if (first_ramge) cout << "No ingreso valores"<<endl; else cout <<"promedio: "<<sumval/c <<endl;
 }
+
+void ej23(){
+    float maxneg, minpos, minrang, sumval, num, c;
+    maxneg= minpos= minrang= sumval= num= c= 0;
+    cout<<"Ingrese un valor"<<endl;
+    cin>>num;
+    while(num!=0){
+        if (num<0 && (num>maxneg ||maxneg==0)) maxneg=num; 
+        if (num>0 && (num<minpos|| minpos==0)) minpos =num;
+        if ( ((num>-17.3 && num<26.9) && minrang==0) || (num>-17.3 && num<26.9)) minrang = num;
+        sumval+=num;
+        cout<<"/nIngrese otro valor"<<endl;
+        cin>>num;
+        c++;
+    }
+    if (maxneg==0) cout<<"No ingreso valores negativos"<<endl; else cout <<"negativo max: "<< maxneg <<endl;
+    if (minpos==-0) cout << "No ingreso valores positivos"<<endl; else cout <<"minimo positivo: "<< minpos <<endl;
+    if (minrang==0) cout << "No ingreso valores dentro del rango"<<endl; else cout <<"minimo rango: "<< minrang<<endl;
+    if (c==0) cout << "No ingreso valores"<<endl; else cout <<"promedio: "<<sumval/c <<endl;
+}
+
 
 void ej22(){ //Oye... y si lo matamos... ESTOY CASAOOOOOOOOO (https://www.youtube.com/watch?v=M_LI6y9OMNg)
     int fecha, maxnum, minnum;
@@ -215,12 +248,19 @@ void ej14(){
 }
 
 void ej13(){
-    int n,m, res;
+    int n,m, res, min_val, max_val;
     res=0;
     cout<<"ingresar n y m: ";
     cin>>n>>m;
-    for(int i=0; i<m;i++){
-        res+=n;
+    if (n<m){
+        min_val=n;
+        max_val =m;
+    } else{
+        min_val=m;
+        max_val = n;
+    }
+    for(int i=0; i<min_val;i++){
+        res+=max_val;
     }
     cout<<res<<endl;
 }

@@ -24,7 +24,7 @@ int main() {
         cout << "Student" << i + 1 << " :" << *(ptr + i) << endl;
     }
 
-    // ptr memory is released
+    // ptr memory is released. Use delete with [] because we want to deallocate is an array
     delete[] ptr;
 
     return 0;

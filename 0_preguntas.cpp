@@ -8,7 +8,7 @@ int main() {
 
     //  Printing array elements
     // using range based for loop
-    for (const int n : numbers) { //por que se usa una constante?
+    for (const int n : numbers) { //por que se usa una constante?  Para no alterar el elemento del iterable
         cout << n << "  ";
     }
 

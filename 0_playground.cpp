@@ -1,5 +1,7 @@
 #include <iostream>
-#include <vector>
+// #include <vector>
+// #include <typeinfo>
+#include <string>
 using namespace std;
 
 
@@ -53,10 +55,12 @@ using namespace std;
 // }
 
 
+
 int main()
 {
-   int num=5;
-   if(cin > 5){
-
+   string a = "La casa";
+   for(int i=0; i<7; i++ ){
+      if (a[i] == " ") 
+      cout<<a[i]<<endl;
    }
 }
