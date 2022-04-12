@@ -56,11 +56,26 @@ using namespace std;
 
 
 
+// int main()
+// {
+//    string a = "La casa";
+//    for(int i=0; i<7; i++ ){
+//       if (a[i] == ' ') 
+//       cout<<a[i]<<endl;
+//    }
+// }
+
+
 int main()
 {
-   string a = "La casa";
-   for(int i=0; i<7; i++ ){
-      if (a[i] == " ") 
-      cout<<a[i]<<endl;
+   int n=1;
+   int c=0;
+   while(n>=0){
+      cin>>n;
+      if (n==0) continue;
+      else {
+         c++;
+         cout<<c<<endl;
+      }
    }
 }
