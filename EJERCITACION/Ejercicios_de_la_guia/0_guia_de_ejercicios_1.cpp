@@ -4,6 +4,8 @@
 #include <vector> // std::vector
 #include <algorithm> //  std::count
 #include <numeric> // std::acumulate
+#include <windows.h> // para abrir el web browser :D
+
 using namespace std;
 
 void ej1(int, int); void ej2(int ); void ej3(int ); void ej5(int , int); void ej6 (); void ej7();void ej8();void ej9();void ej11();
@@ -18,83 +20,46 @@ int main () {
  return 0;
 }
 
+// ej24: ME QUEDA VER COMO HAGO PARA MOSTRAR LOS RESULTADOS DEL ULTIMO SUBLOTE, Y CORREGIR UN TEMA CON LA CANTIDAD DE LOTES QUE SON
 void ej24(){
     float num, avg_sublote, sum_sublote,max_val_conjunto, max_val_conjunto_sub, max_val_conjunto_sub_position, min_sublote;
-    int total_sublotes, contador;   
+    int total_sublotes, contador;  
+    bool flag = true; 
     avg_sublote=sum_sublote=total_sublotes=contador=max_val_conjunto=max_val_conjunto_sub= min_sublote=max_val_conjunto_sub_position= min_sublote= 0;  
     cin>>num;
-    
-    while(num>=0){
-        if(num==0){
+    if(num<=0) --total_sublotes;
+    while(true){
+        if(num==0 || num<0){
             total_sublotes++;
             if (contador!=0){
             avg_sublote=sum_sublote/contador;
             cout<<"El promedio del sublote "<< total_sublotes <<" es "<< avg_sublote << endl;
             cout<<"El valor minimo del sublote es "<< min_sublote<<endl;
-            sum_sublote = contador = min_sublote= 0;
+            sum_sublote = contador = min_sublote= 0;}
+            if (num<0){
+                break;
             }
         }else{
             contador++;
             if(max_val_conjunto==0) max_val_conjunto=num;
             if(min_sublote==0) min_sublote=num; 
-            //  a) promedio de valores de sublote
             sum_sublote+=num;
-            // Valor max conjunto, sublote y posicion dentro del sublote
             if(max_val_conjunto<=num) {
                 max_val_conjunto=num;
                 max_val_conjunto_sub = total_sublotes;
                 max_val_conjunto_sub_position = contador-1;
-                // Minimo valor del sublote
             }if (min_sublote>num) min_sublote=num;
             }
         cin>>num;
-        
     }
-    if(total_sublotes==0){
-        cout<<"El promedio del lote "<< sum_sublote/contador << endl;
-        cout<<"El valor minimo del lote "<< min_sublote <<endl;
-    }
+    // if(total_sublotes==0){
+    //     cout<<"El promedio del lote "<< sum_sublote/contador << endl;
+    //     cout<<"El valor minimo del lote "<< min_sublote <<endl;
+    // }
     cout<<"El total de sublotes procesados es "<< total_sublotes << endl;
-    cout<<"El valor maximo del conjunto es " << max_val_conjunto <<" en el sublote "<< max_val_conjunto_sub  << " y en la posicion del sublote "<< max_val_conjunto_sub_position << endl;
+     if(max_val_conjunto!=0) cout<<"El valor maximo del conjunto es " << max_val_conjunto <<" en el sublote "<< max_val_conjunto_sub +1 << " y en la posicion del sublote "<< max_val_conjunto_sub_position+1 << endl;
     system("pause");
 }
-
-// void ej24(){
-//     float num, avg_sublote, sum_sublote,max_val_conjunto, max_val_sub, max_val_sub_position, min_sublote, max_sublote;
-//     int n_sublote, total_sublotes, contador;
-//     bool first_val_sublote = true;
-//     total_sublotes=0;
-//     cin>>num;
-//     max_val_conjunto=num;
-
-//     while(num>=0){
-//         sum_sublote=contador=0;
-//         min_sublote=num;
-
-//         while (num!=0){
-//         // a) promedio de valores de sublote
-//         sum_sublote+=num;
-//         contador++;
-//         // Valor max conjunto, sublote y posicion dentro del sublote
-//         if(max_val_conjunto<num) {
-//             max_val_conjunto=num;
-//             max_val_sub = total_sublotes+1;
-//             max_val_sub_position = contador;
-//             // Minimo valor del sublote
-//         }if (min_sublote>num) min_sublote=num;
-//         cin>>num;
-//         }
-
-//         avg_sublote=sum_sublote/contador;
-//         // b) total sublotes procesados
-//         total_sublotes++;
-//         cout<<"El promedio del sublote "<< total_sublotes<<" es "<< avg_sublote << endl;
-//         cout<<"El valor minimo del sublote es "<< min_sublote<<endl;
-//         cin>>num;
-        
-//     }
-//     cout<<"El total de lotes procesados es "<< total_sublotes << endl;
-// }
 
 void ej23_flags(){
     float maxneg, minpos, minrang, sumval, num, c;
@@ -156,6 +121,11 @@ void ej23(){
 
 
 void ej22(){ //Oye... y si lo matamos... ESTOY CASAOOOOOOOOO (https://www.youtube.com/watch?v=M_LI6y9OMNg)
+
+    cout<<"ODIO ESTE EJERCICIO!!!!!!! ... tengo una idea ..."<<endl;
+    system("pause");
+    ShellExecute(NULL, "open", "https://www.youtube.com/watch?v=M_LI6y9OMNg", NULL, NULL, SW_SHOWNORMAL);
+
     int fecha, maxnum, minnum;
     string namemax, namemin, name;
     for (int i=0; name!="FIN"; i++ ){  //esta mal usar un for asi pero soy muy pajero para cambiar a la estructura por un while :D

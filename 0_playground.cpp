@@ -2,6 +2,8 @@
 // #include <vector>
 // #include <typeinfo>
 #include <string>
+
+
 using namespace std;
 
 
@@ -65,17 +67,11 @@ using namespace std;
 //    }
 // }
 
-
-int main()
+#include <windows.h>
+int main(void)
 {
-   int n=1;
-   int c=0;
-   while(n>=0){
-      cin>>n;
-      if (n==0) continue;
-      else {
-         c++;
-         cout<<c<<endl;
-      }
-   }
+// ShellExecute(NULL, "open", "https://www.youtube.com/watch?v=M_LI6y9OMNg", NULL, NULL, SW_SHOWNORMAL);
+// return 1;
+int n=5, o=10;
+cout<<n+o;
 }

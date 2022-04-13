@@ -1,15 +1,21 @@
 #include <iostream>
 using namespace std;
 
-int eje_fact(int n);
-int eje_fact2(int n);
+int eje_fact(int);
+int eje_fact2(int);
+int factorial(int);
 
 int main () {
     int n;
     cout<<"Ingrese un numero para sacar el factorial: ";
     cin>>n;
-    cout<<"Resultado: " << eje_fact2(n);
+    cout<<"Resultado: " << factorial(n);
 return 0;
+}
+
+int factorial(int n){
+    if (n==1) return n;
+    return n * factorial(n-1);
 }
 
 int eje_fact2 (int n){
@@ -33,4 +39,3 @@ int eje_fact (int n){
 return fact;
 }
 
-// Estoy probando y me andan los commits.
